@@ -1,0 +1,474 @@
+% !TeX program = lualatex
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage{fontspec}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{bucolors}
+\usepackage[colorlinks=true,allcolors=black,urlcolor=bugold]{hyperref}
+\usepackage{mathtools}
+\usepackage{mdframed}
+\usepackage{titling}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage[english]{babel}
+\usepackage[sf,bf]{titlesec}
+\usepackage[inline]{enumitem}
+\usepackage[margin=1in,letterpaper]{geometry}
+\usepackage{multicol}
+\usepackage{soul}
+\usepackage{nameref}
+
+\setmainfont{TeX Gyre Termes}[Ligatures=TeX]
+\setsansfont{TeX Gyre Heros}[Ligatures=TeX]
+\setmonofont{TeX Gyre Cursor}
+
+\title{How and Why Things Work:\\ A Course for the Curious}
+\author{Dr.\ Daniel A.\ McCurry}
+\date{Fall 2023}
+
+\newcommand{\classnum}{FYS100}
+
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{\footnotesize\sffamily McCurry --- \classnum\ --- FA23}
+\cfoot{}
+\rfoot{\footnotesize\sffamily\thepage~of~\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\pretitle{\noindent\color{bumaroon}
+	\sffamily\bfseries\Large
+	\classnum \newline
+	\LARGE\expandafter\MakeUppercase\expandafter}
+\posttitle{\par\medskip}
+\preauthor{\noindent\sffamily}
+\postauthor{ --- }
+\predate{\sffamily}
+\postdate{}
+
+\setlength{\droptitle}{-4em}
+
+\setcounter{secnumdepth}{0}
+\setlist[description]{font=\sffamily\bfseries\small}
+\urlstyle{same}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\noindent
+\begin{tabularx}{\linewidth} {@{\qquad}>{\bfseries\sffamily}r
+	*{2}{>{\raggedright\arraybackslash}X}}
+	\toprule
+	Day and Time: & Section 10 & Section 11 \\
+		      & 9:00 am -- 9:50 am & 11:00 am -- 11:50 am \\ 
+		 & MWF @ HSC  & MWF @ HSC  \\ \\
+	Instructor: & Dr.\ Daniel A. McCurry &
+	\href{mailto:dmccurry@commonwealthu.edu}{\nolinkurl{dmccurry@commonwealthu.edu}}
+	\\
+		    & 	Associate Professor of Chemistry & (570) 389-5320 \\
+		    & 	HSC 240 &
+		    \href{https://bloomu.starfishsolutions.com/starfish-ops/dl/instructor/serviceCatalog.html?bookmark=connection/20001}{CU
+			    Succeed
+		     	Profile} \\ \\
+	Office Hours: & 
+		\begin{tabular}[t] {@{}lr@{\,--\,}l}
+			Mon./Tue.  & 3:00 & 5:00\,p.m. \\
+			Thur. & 4:00 & 5:00\,p.m. \\ 
+		\end{tabular}
+		      & Need another time? \newline
+\href{https://outlook.office.com/bookwithme/user/38fcfec5771549768d6c1a6f66912778@commonwealthu.edu/meetingtype/scMRb4P_HUKzXVNHurMbRA2?anonymous}{Schedule
+			an Appointment}
+			 \\ \\
+%		      &   In-Person or via Zoom Meeting ID
+%                          ``\href{https://bloomu.zoom.us/my/dmccurry}{dmccurry}''\\
+%                      &    \href{https://bloomu.starfishsolutions.com/starfish-ops/dl/instructor/serviceCatalog.html?bookmark=connection/20001/schedule}{Schedule
+%		      an Appointment} (not required) \\ \\
+%		Textbook: %& Harvey, D. \textit{Analytical Chemistry 2.1} (\href{https://chem.libretexts.org/@go/page/122341}{Open Access}) \\
+%			   & \multicolumn{2}{l}{Harris, D.C. \textit{Quantitative Chemical Analysis},
+%	10\textsuperscript{th} Ed.}  \\ & \multicolumn{2}{l}{(older editions OK, Inclusive
+%Access opt out by \textbf{8/28})}
+%	      \\ \\
+	Materials: & \multicolumn{2}{l}{Laptop} \\
+	\bottomrule
+\end{tabularx}
+
+\section{Course Description}
+Designed for first-year students, this course cultivates scholarly and academic
+succes, promotes engagement with the univerity community, fosters personal
+development and wellness, and promotes understanding of diversity and social
+responsibility. Individual sections of the course are devoted to specific themes
+selected by instructors and of interest to students as they begin the
+intentional process of degree and career planning. The course is required for
+all first-year students.
+
+Have you ever observed something in everyday life and wondered, ``Why/How did
+that happen?'' This is a course for those not just interested in observing, but
+knowing the underlying scientific reasoning behind everyday events. Most
+phenomena can be explained by investigating the interaction of molecules and
+basic chemical principles. Some results will be urprising, but when basic
+cientific principle are applied, the results can be explained and understood.
+
+\subsubsection{Potential questions we answer may include the following:}
+\begin{itemize}
+	\item How does soap know what is dirt?
+	\item How do microwaves work?
+	\item Why i there wood in my shredded cheese?
+	\item Why doesn't your car start in cold weather?
+	\item Why do waves roll parallel to the shore?
+	\item How can you tell temperature by listening to a cricket?
+	\item How did that latest TikTok life hack actually work?
+	\item What exactly is in a Red Bull?
+	\item Exactly how much sleep do I need to function?
+	\item Why is there so much saturated fat in Ramen noodles?
+	\item Any other topics you are curious about.
+\end{itemize}
+
+These questions will be answered using the scientific method and classroom
+demonstrations/lab as applicable.
+
+This specific theme will be interwoven (where appropriate) with the following
+Firt Year Seminar Course Goals and Content. The course will also use guest
+speakers/field trips to multiple areas on campus, which may include Alumni and
+Professional Engagement, The Learning Center, WALES, Student Success, Counseling
+services, financil aid, Health and Wellness, and Diversity Equity, and
+Inclusion. One or more trips to the library is also planned.
+
+\subsection{Learning Objectives}
+By the end of this course, you are expected to be able to:
+\begin{itemize}[noitemsep]
+	\item Determine the extent of information needed.
+	\item Assess the needed information using current technologies.
+	\item Evaluate information and its sources critically.
+	\item Use information effectively to present a literature review.
+	\item Access and use information ethically and legally.
+\end{itemize}
+
+\subsection{Course Community and Communication}
+In a remote instruction setting, it can become incredibly difficult to build
+personal connections with your peers. To encourage some communication, Dr.\
+McCurry will be using the Discussion Board on BOLT extensively. If you have a
+question with an answer that could benefit the class as a whole, please post
+your question to the Discussion Board, rather than sending an individual email
+to Dr.\ McCurry. I would also be happy to help organize study groups or post
+links to class chat groups (Google Meet, Discord, Matrix, etc.) if you are
+interested. Please let me know if you would like to chat with other classmates
+and I will put you in touch.
+
+All course announcements will be delivered on the BOLT course page. It is your
+responsibility to regularly check BOLT. Dr.\ McCurry will \emph{not} send out
+email announcements, so BOLT is the \emph{only} location you will need to check
+for all important course information. If you would like push notifications on
+your phone when announcements are posted, please download the
+\href{https://documentation.brightspace.com/EN/brightspace/requirements/all/pulse.htm}{Brightspace
+Pulse} app.
+
+\section{Evaluations and Grading}
+Your overall course grade will be calculated as follows:
+\begin{multicols}{2}
+	\subsection{Point Distribution}
+	\begin{center}
+		\begin{tabular}{l r<{\%}}
+			In-Class Discussion & 20 \\
+			Written Assignments & 35 \\
+			Final Project & 45 \\ \midrule
+			& 100
+		\end{tabular}
+	\end{center}
+	\subsection{Grade Assignment}
+	\begin{center}
+		\begin{tabular} {r@{~--~}l l @{\hspace{0.5in}}r@{~--~}l l}
+			\multicolumn{3}{c}{} & 76 & 77 &  C+ \\
+		 	90 & 100 & A         & 67 & 75 &  C  \\
+		 	88 & 89  & A-        & 65 & 66 &  C- \\
+		 	86 & 87  & B+        & 63 & 64 &  D+ \\
+			80 & 85  & B         & 55 & 62 &  D  \\
+		 	78 & 79  & B-        &  0 & 54 &  F  \\
+	\end{tabular}
+\end{center}
+\end{multicols}
+
+\subsection{Graded Items}
+\begin{description}
+	\item[In-Class Discussions:]
+		Most weeks we will spend some class time discussing at least one
+		specific piece of scientific literature, whether it be a journal
+		article, a news article dealing with a scientific topic, or some
+		other document dealing with an aspect of critical reading,
+		writing, and thinking. Your grade on these assignments will not
+		be based on how much of the given article you comprehend but
+		instead on how actively you engage in classroom discussions
+		related to the material. As such, it is important that you read
+		these articles prior to coming to class and come prepared to
+		discuss them. I would also recommend taking notes as you read
+		these articles; this will aid your participation in the class
+		discussion.
+		\begin{itemize}
+			\item For each class period you will be assigned a
+				participation score of 0--3 points based upon
+				your level of participation. Points are
+				generally assigned as follows: Zero points for
+				an unexcused absence; one point for attending
+				class with no participation; two points for
+				participation that was initiated by instructor
+				(i.e., being called upon); three points for
+				voluntary participation.
+			\item At the end of the semester, I will sum your
+				participation points, divide by 42 (14 wks.
+				$\times$ 3
+				pts. each) and then multiply by 100 to determine
+				your percentage score.
+			\item If I plan for us to discuss specific articles
+				during a class period, I will post the material
+				on BOLT at least a week in advance.
+		\end{itemize}
+	\item[Written Assignments:] At various points during the semester, you
+		will be required to submit short written assignments and/or
+		reflections. These assignments will be aimed at developing your
+		critical reading and writing skills by analyzing various aspects
+		of the chemical literature or readings related to topics we have
+		discussed in class. These assignments will either be made in
+		class or announced on BOLT. In either case, you will have from
+		one to two weeks to complete these assignments. Further details
+		on each assignment will be provided as relevant.
+		\begin{itemize}
+%			\item As part of the course, \textbf{you are required to
+%				attend all chemistry seminars}. The seminars are
+%				typically scheduled on Friday afternoons at 4 pm
+%				and will be announced in advance. You must have
+%				a valid written excuse if you have a conflict
+%				(\emph{verified in writing in advance}),
+%				whereupon an alternative writing assignment will
+%				be given.  Following the seminar, you will be
+%				required to write a report of \emph{500-650}
+%				words summarizing the topic presented and
+%				offering some critique of the presentation
+%				itself (i.e. graphs/text too small, unclear
+%				speech, etc.).
+			\item All written assignments will be will be worth 30
+				points. The grading of these assignments will
+				follow the guidelines given below:
+				\begin{center}
+					\begin{tabular}
+						{>{\bfseries\sffamily}r<{\,pts.}
+							l
+						}
+						10 & appropriate interpretation
+						and summation of the assigned
+						reading \\
+						15 & critical analysis of or
+						reflection on the assigned
+						reading content \\
+						5 & correct grammar,
+						punctuation, syntax, etc.
+					\end{tabular}
+				\end{center}
+			\item Assignments that do not meet the minimum length
+				requirements (as stated when the assignment is
+				given) will be penalized accordingly.
+		\end{itemize}
+	\item[Final Project:] In place of a final exam, you will be required to
+		use a popular science article and at least one accompanying
+		primary research article to complete a written assignment and
+		class presentation. Full details regarding format, grading, and
+		relevant due dates for the project will be posted to BOLT.
+		\begin{itemize}
+			\item In addition, you will be required to submit a
+				paper summarizing your findings. This paper will
+				be graded as above, with two important changes:
+				(1) this final paper will be worth 100 points,
+				and (2) these points will count toward your
+				final project grade.
+			\item Full details regarding the format, grading, and
+				relevant due dates for the final project are
+				provided in a separate document.
+		\end{itemize}
+\end{description}
+
+\subsection{BOLT Submissions}
+
+All written work in this course is to be submitted in PDF format via
+BOLT. Please make sure that your name also appears \textbf{at the top}
+of each submitted assignment.
+
+\subsection{Late Submissions}
+
+Written work submitted after the due date and time will be penalized 5\%
+for every hour it is late for the first six hours and 10\% for every
+hour thereafter.
+
+
+\subsection{Grading Errors}
+It is \emph{your} responsibility to bring grading errors to my attention. You
+have 72 hours from the return of the graded item to submit it for a re-grade.
+\emph{The entire item will be re-graded}. If the grading error results from a
+technology failure, the professor may administer a make-up question. You have
+until 4:30~p.m.\ on the day of the final exam to bring clerical errors to my
+attention.
+
+\section{Important Dates}\label{importantdates}
+Please review the BOLT calendar as it includes all due dates for assignments as
+well as our lecture schedule. Some important dates to keep in mind:
+\begin{center}
+	\begin{tabular} {l l l}
+		February  5 & Friday & Tech Module due at 5:00 p.m. \\
+		April 19 & Monday & Presentations \\
+		April 26 & Monday & Presentations \\
+		May 3 & Monday & Presentations \\
+		May 10 & Monday & Final paper due \\
+	\end{tabular}
+\end{center}
+
+Please note, if you are unable to complete an assignment by
+its scheduled time due to some unavoidable circumstance, you are obligated to
+provide a documented valid excuse to your instructor. \emph{Failure to provide a
+valid excuse on these terms will result in a score of zero for the assignment.}
+
+\subsection{Attendance}
+
+Attendance in this course is mandatory. For every unexcused absence you
+accumulate, two percentage points will be deducted from your course
+average. Of course, if you have a \textbf{documented} valid excuse, you
+will not be penalized. Valid excuses for missed class periods are:
+
+
+	\begin{center}
+		\renewcommand\arraystretch{1.25}
+\begin{tabularx}{\linewidth} {X X}
+	\toprule
+	\bfseries Valid Excuse & \bfseries Time Frame to Provide Documentation
+	\\ \midrule
+	Personal illness or accident, illness or accident of a dependent child,
+	or death or critical illness of an immediate family member &
+	48\,hr after the missed graded event \\
+	Participation in a university-sponsored activity &
+	48\,hr in advance of the missed graded event \\
+	Military duty & As soon as possible \\
+	Religious observance & The second Friday of the semester \\
+	Others, as merited on a case-by-case basis & 48\,hr after the
+	missed graded event \\
+	\bottomrule
+\end{tabularx}
+\end{center}
+
+Note that technical issues, including internet connection problems, are
+\emph{not} generally considered valid excuses. This course requires a regularly
+available high speed internet connection. It is highly recommended that you do
+not wait until the last minute to start an exam or assignment to avoid potential
+issues. If you are not able to secure a stable connection and laptop or desktop
+computer, please visit \url{https://bloomu.edu/student-assistance} and ``raise
+your hand''. You may be eligible for a loaned laptop or cellular access point.
+
+Immediate technical issues, such as BOLT being inaccessible, can be submitted to
+\url{https://helpdesk.bloomu.edu}. At the bottom of the form, you must include
+my email address (dmccurry@bloomu.edu) in the ``Additional Email Notifications''
+to alert me that you are taking steps to resolve the issue.
+
+\section{Policies and Expectations}
+In order to maintain an atmosphere that is conducive to learning, all members
+of the class are expected to demonstrate common courtesy during the lecture,
+including but not exclusively:
+\begin{enumerate}
+	\item \textbf{Be on time for class.} In the rare instances where
+		arriving late is unavoidable, enter quietly. Make sure your
+		microphone is muted.
+	\item \textbf{Once in class, stay for the duration.} If you know you
+		need to leave early, please make me aware of your plans before
+		class begins.
+	\item \textbf{Be courteous with others on Zoom.} Allow others to finish
+		speaking before unmuting yourself. If you have a question or
+		would like me to repeat something, just use the raise your hand
+		button in the participants list. (Do feel free to stop me if
+		it's clear I didn't notice!)
+	\item \textbf{Do not participate in activities not pertinent to the
+		class.} Please focus your attention to the Zoom meeting.
+	\item \textbf{Academic dishonesty is not tolerated.} All work in this
+		course must be your own; on group projects your individual
+		contribution to the project must be evident. You will be
+		assigned a grade of ``F'' for the course if found violating the
+		Academic Integrity policy (PRP3512).  See me if you are unclear
+		about what I consider to be dishonest.
+\end{enumerate}
+
+
+
+\section{Academic Dishonesty}
+\emph{Academic dishonesty is not tolerated.} If you are unclear about what is
+dishonest, please see
+\href{https://intranet.bloomu.edu/policies_procedures}{PRP 3512 --- Academic
+Integrity Policy} for clarification. If you are unsure about my specific
+instructions, ask me.
+
+\begin{mdframed}
+	\centering\bfseries The minimum penalty for academic dishonesty is a
+	course assignment of ``F'' for \emph{all} students involved.
+\end{mdframed}
+
+\section{Class Cancellation}
+If class is canceled, please check BOLT for course announcements. An assignment
+may be provided to make up for the lost time. 
+Please let your instructor know as soon as possible if you lose power or
+internet access.
+
+%\section{Fire Alarms}
+%In the event of a building evacuation, calmly and quickly leave the building via
+%the nearest exit. In the event of an evacuation during laboratory, ensure all
+%hot plates or other possible hazards are turned off and unplugged prior to
+%leaving. Your instructor will point exits out the first time you are physically
+%in lab.  Gather with your class on the quad lawn in front of Bakeless.  Do not
+%re-enter the building for any reason. Do not gather around the exits. Do not
+%enter a building that has an alarm sounding. There is one, and only one, drill
+%the first week of the semester. There are \emph{no} random drills.
+
+
+\section{Last Day to Withdraw}
+The Registrar has set the last day of class as the withdrawal deadline.
+Students are encouraged to review the latest withdrawal
+(\href{https://intranet.bloomu.edu/policies_procedures}{PRP 3462 ---
+Undergraduate Course Withdrawal}) and course repeat
+(\href{https://intranet.bloomu.edu/policies_procedures}{PRP 3452 --- Course
+Repeat}) policies of the University prior to that date as there are strict
+limits on the number of repeats one can have. 
+
+\begin{mdframed}
+	\centering
+	All policies, rules, and procedures (PRP) are available at
+	\url{https://www.bloomu.edu/policies_procedures}
+\end{mdframed}
+
+\section{Accommodations}
+Bloomsburg University provides reasonable accommodations to students who have
+documented disabilities. If you have a documented disability that requires
+academic accommodations and are not registered with 
+\href{https://intranet.bloomu.edu/disabilities}{University Disability Services},
+Office, please contact this office as soon as possible to establish your
+eligibility. Please also provide documentation to Dr.\ McCurry as promptly as
+possible.
+
+\vfill
+
+\begin{mdframed}
+	\noindent
+	The materials contained in this syllabus and the
+	BOLT webpage for this course are intended only for those registered for
+	the above course/semester. The materials cannot be used without the
+	expressed written consent of Dr.\ McCurry. Any use of these materials
+	outside the intended purpose of this course is considered Copyright
+	Infringement and will be dealt with according the Academic Integrity
+	Policy.  
+
+	\noindent
+	The source code for some material has been licensed under the Creative
+	Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC
+	BY-NC-SA 4.0) license to provide you with an opportunity to view the
+	original source materials and contribute to the content. If you would
+	like to view the material and suggest improvements, please visit
+	\url{https://git.damccurry.com/dan/CHEM281}. Ask Dr.\ McCurry for an
+	account!
+\end{mdframed}
+
+\end{document}

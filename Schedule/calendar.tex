@@ -1,0 +1,125 @@
+\documentclass[10pt,letterpaper,landscape]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{termcal}
+\usepackage{palatino}
+\usepackage{fontawesome}
+\usepackage{fancyhdr}
+\usepackage{titling}
+\usepackage{lastpage}
+\usepackage{datatool}
+\usepackage{ifthen}
+\usepackage{enumitem}
+
+\setlist{nosep,wide=0.5em}
+\newenvironment{details}{\begin{footnotesize}\begin{itemize}}{\end{itemize}\end{footnotesize}}
+
+\newcounter{examnumber}
+\newcounter{quiznumber}
+\newcounter{labnumber}
+\newcounter{labdaynumber}
+\newcounter{weekcounter}
+\newcommand{\exam}{\stepcounter{examnumber}\faEdit~\textbf{Exam
+\arabic{examnumber}}}
+\newcounter{homeworknumber}
+\newcommand{\hw}{%
+	%\ifthenelse{\isodd{\theweekcounter}}{}{\stepcounter{homeworknumber}
+	\stepcounter{homeworknumber}\faCalculator~\textbf{HW Set
+	\arabic{homeworknumber} Due (10 \textsc{pm})}
+%}
+}
+
+\title{Curiosity etc. Schedule}
+\newcommand{\semester}{FA23}
+\author{McCurry}
+
+% Turn off 1st, 2nd, 3rd, etc.
+\renewcommand{\calprintdate}{%
+	\ifnewmonth\framebox{\monthname\ \arabic{date}}%
+	\else \arabic{date}\fi
+}
+
+\lhead{\sffamily \thetitle}
+\chead{}
+\rhead{\sffamily \semester\ --- FYS100 --- \theauthor}
+\lfoot{\sffamily\footnotesize\em Exam dates are set. All other material subject
+to change.}
+\cfoot{}
+\rfoot{\sffamily\thepage\ of \pageref{LastPage}}
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+\pagestyle{fancy}
+
+\begin{document}
+
+\begin{calendar}{8/21/23}{16}
+	\setlength{\calboxdepth}{4em}
+
+	% Description of the Week
+	\calday[Monday]{\classday\stepcounter{weekcounter}}
+	\skipday
+	\calday[Wednesday]{\classday}
+	\skipday
+	\calday[Friday]{\classday}
+	\skipday\skipday
+
+	% Holidays
+	\options{9/4/23}{\noclassday\weeklytext{}} % Labor Day
+	\caltext{9/4/23}{\em Labor Day --- No Class}
+	\options{11/21/23}{\noclassday\weeklytext{}\stepcounter{weekcounter}} % Thanksgiving
+	\caltext{11/21/23}{\em Fall Break --- No Class}
+	\options{11/22/23}{\noclassday\weeklytext{}} % Thanksgiving
+	\caltext{11/22/23}{\em Fall Break --- No Class}
+	\options{11/23/23}{\noclassday\weeklytext{}\stepcounter{weekcounter}} % Thanksgiving
+	\caltext{11/23/23}{\em Fall Break --- No Class}
+	\options{11/24/23}{\noclassday\weeklytext{}} % Thanksgiving
+	\caltext{11/24/23}{\em Fall Break --- No Class}
+
+	% Final Exam
+	\options{12/4/23}{\noclassday\weeklytext{}}
+	\options{12/5/23}{\noclassday\weeklytext{}}
+	\options{12/6/23}{\noclassday\weeklytext{}}
+	\options{12/7/23}{\noclassday\weeklytext{}}
+	\options{12/8/23}{\noclassday\weeklytext{}}
+	\caltext{12/4/23}{\faEdit~\textbf{Final Exam} \\
+		\hspace{1em} 10:15 am -- 12:15 pm FIXME}
+
+	% Topics
+	\caltexton{1}{Introductions \\ What is FYS100?}
+	\caltextnext{Websites, Software, and Computing}
+	\caltextnext{Time Management}
+	\caltextnext{``Socializing''}
+	\caltextnext{Curiosity}
+	\caltextnext{Choosing a Question}
+	\caltextnext{Why is hygeine important?}
+	\caltextnext{Creating a Hypothesis}
+	\caltextnext{Experimental Design}
+	\caltextnext{Choosing a Question}
+	\caltextnext{Gathering Information}
+	\caltextnext{\exam}
+	\caltextnext{Introduction to the Library}
+	\caltextnext{What makes a source trustworthy?}
+	\caltextnext{Who is your advisor?}
+	\caltextnext{Exploring General Education}
+	\caltextnext{Lead Pipes}
+	\caltextnext{Ethics and Honesty}
+	\caltextnext{Citations and Citation Managers}
+	\caltextnext{}
+	\caltextnext{}
+	\caltextnext{}
+	\caltextnext{\exam}
+	\caltextnext{}
+	\caltextnext{}
+	\caltextnext{}
+	\caltextnext{}
+	\caltextnext{}
+	\caltextnext{}
+	\caltextnext{WALES}
+	\caltextnext{\exam}
+	\caltextnext{Residential Life}
+	\caltextnext{Counseling Services}
+	\caltextnext{The Career Center}
+
+\end{calendar}
+
+\end{document}

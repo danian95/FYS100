@@ -22,14 +22,14 @@
 \newcommand{\exam}{\stepcounter{examnumber}\faEdit~\textbf{Exam
 \arabic{examnumber}}}
 \newcounter{homeworknumber}
-\newcommand{\hw}{%
+\newcommand{\hw}[1]{%
 	%\ifthenelse{\isodd{\theweekcounter}}{}{\stepcounter{homeworknumber}
-	\stepcounter{homeworknumber}\faCalculator~\textbf{HW Set
-	\arabic{homeworknumber} Due (10 \textsc{pm})}
+	\stepcounter{homeworknumber}\faFileTextO~\textbf{HW~\arabic{homeworknumber}:\enspace%
+	#1}
 %}
 }
 
-\title{Curiosity etc. Schedule}
+\title{How and Why Things Work: A Course for the Curious Schedule}
 \newcommand{\semester}{FA23}
 \author{McCurry}
 
@@ -42,7 +42,7 @@
 \lhead{\sffamily \thetitle}
 \chead{}
 \rhead{\sffamily \semester\ --- FYS100 --- \theauthor}
-\lfoot{\sffamily\footnotesize\em Exam dates are set. All other material subject
+\lfoot{\sffamily\footnotesize\em Course material may be driven by curiousity --- Material subject
 to change.}
 \cfoot{}
 \rfoot{\sffamily\thepage\ of \pageref{LastPage}}
@@ -53,7 +53,7 @@ to change.}
 \begin{document}
 
 \begin{calendar}{8/21/23}{16}
-	\setlength{\calboxdepth}{4em}
+%	\setlength{\calboxdepth}{4em}
 
 	% Description of the Week
 	\calday[Monday]{\classday\stepcounter{weekcounter}}
@@ -75,51 +75,74 @@ to change.}
 	\options{11/24/23}{\noclassday\weeklytext{}} % Thanksgiving
 	\caltext{11/24/23}{\em Fall Break --- No Class}
 
+
+
 	% Final Exam
 	\options{12/4/23}{\noclassday\weeklytext{}}
 	\options{12/5/23}{\noclassday\weeklytext{}}
 	\options{12/6/23}{\noclassday\weeklytext{}}
 	\options{12/7/23}{\noclassday\weeklytext{}}
 	\options{12/8/23}{\noclassday\weeklytext{}}
-	\caltext{12/4/23}{\faEdit~\textbf{Final Exam} \\
-		\hspace{1em} 10:15 am -- 12:15 pm FIXME}
+	\caltext{12/4/23}{\faFilePowerpointO~\textbf{9 AM Section} Student Presentations \\
+		\hspace{1em} 8:00 am -- 10:00 am \\
+		\faFilePowerpointO~\textbf{11 AM Section} Student Presentations \\
+		\hspace{1em} 10:15 am -- 12:15 pm \\
+	}
 
 	% Topics
-	\caltexton{1}{Introductions \\ What is FYS100?}
-	\caltextnext{Websites, Software, and Computing}
-	\caltextnext{Time Management}
-	\caltextnext{``Socializing''}
-	\caltextnext{Curiosity}
-	\caltextnext{Choosing a Question}
-	\caltextnext{Why is hygeine important?}
-	\caltextnext{Creating a Hypothesis}
-	\caltextnext{Experimental Design}
-	\caltextnext{Choosing a Question}
-	\caltextnext{Gathering Information}
-	\caltextnext{\exam}
-	\caltextnext{Introduction to the Library}
-	\caltextnext{What makes a source trustworthy?}
-	\caltextnext{Who is your advisor?}
+	\caltexton{1}{Introductions \\ What is FYS100? \\ \hw{Week 1 Survey}}
+	\caltextnext{\faLaptop~Websites, Software, and Computing \\
+		\qquad\emph{(Bring your
+	laptop to class)}}
+	\caltextnext{``Socializing''\\ \hw{First Week Reflection}}
+	
+	\caltextnext{The Scientific Method}
+	\caltextnext{\faBook~Using the Library \emph{(Meet in Library)} \\
+	\hw{Literature Search}} % Scheduled for 8/30 SLO1
+	\caltextnext{Ethics and Peer Review}
+	\caltextnext{Time Management\\ \hw{Semester Schedule}}
+
+	\caltextnext{A Crash Course in Chemistry}
+	\caltextnext{\faFlask~Lab Tour \emph{(Meet in HSC 231)}}
+	\caltextnext{Creating a Hypothesis \\ and Choosing a Question \\
+	\hw{Hypothesis}}
+	\caltextnext{Study Skills and Learning} \\
+	\caltextnext{\faQuestion~How does soap know what is dirt?}
+	\caltextnext{\faEdit~WALES \emph{tentative} \\ \hw{Paraphrasing}} % pending
+	\caltextnext{\faQuestion~How do microwaves work?}
+
+	\caltexton{15}{\faGraduationCap~Academic Advising \\ \hw{Who's your
+	advisor?}} % Scheduled for 9/25	SLO1
 	\caltextnext{Exploring General Education}
+	\caltextnext{\faQuestion\faFlask~What's in an energy drink?}
+	\caltexton{18}{\faHeart~Counseling Services} % Scheduled for 10/2 SLO3
+	\caltextnext{\faQuestion~Exactly how much sleep do I need to function?}
+	\caltextnext{Official Middle of the Semester --- What now? \\
+	\hw{Midterm Reflection}}
+	\caltextnext{\faQuestion~Why is there wood in my shredded cheese?}
+	\caltextnext{Gathering Information}
+	\caltextnext{}
+	\caltextnext{}
+	\caltextnext{}
 	\caltextnext{Lead Pipes}
-	\caltextnext{Ethics and Honesty}
+	\caltextnext{}
 	\caltextnext{Citations and Citation Managers}
 	\caltextnext{}
 	\caltextnext{}
 	\caltextnext{}
-	\caltextnext{\exam}
 	\caltextnext{}
 	\caltextnext{}
 	\caltextnext{}
 	\caltextnext{}
 	\caltextnext{}
-	\caltextnext{}
-	\caltextnext{WALES}
-	\caltextnext{\exam}
 	\caltextnext{Residential Life}
-	\caltextnext{Counseling Services}
-	\caltextnext{The Career Center}
-
+	\caltextnext{}
+	\caltexton{37}{\faBriefcase~Professional Engagement}
+	\caltextnext{Letters of Recommendation}
+	\caltextnext{\faFilePowerpointO~Student Presentations}
+	\caltextnext{\faFilePowerpointO~Student Presentations}
+	\caltextnext{\faFilePowerpointO~Student Presentations}
+	\caltextnext{\faFilePowerpointO~Student Presentations}
 \end{calendar}
 
 \end{document}
